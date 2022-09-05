@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
+
 module Options
   def display_options
     loop do
@@ -78,3 +80,4 @@ module Options
     exit
   end
 end
+# rubocop:enable Metrics/MethodLength, Metrics/CyclomaticComplexity
