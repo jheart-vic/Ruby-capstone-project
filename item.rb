@@ -18,8 +18,6 @@ class Item
     current_date = Date.today
     pub_date = Date.strptime(@publish_date, "%Y-%m-%d")
     calculated_date = current_date.year - pub_date.year
-    return true if calculated_date > 10
-
-    false
+    calculated_date > 10
   end
 end
