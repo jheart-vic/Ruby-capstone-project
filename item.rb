@@ -16,7 +16,8 @@ class Item
 
   def can_be_archived?
     current_date = Date.today
-    calculated_date = current_date.year - @publish_date.year
+    pub_date = Date.strptime(@publish_date, "%Y-%m-%d")
+    calculated_date = current_date.year - pub_date.year
     return true if calculated_date > 10
 
     false
