@@ -2,7 +2,7 @@ require 'date'
 class Item
   attr_accessor :author, :source, :genre, :label
 
-  def initialize(publish_date, archived = false, id = Random.rand(1..1000))
+  def initialize(publish_date, id = Random.rand(1..1000), archived: false)
     @publish_date = publish_date
     @archived = archived
     @id = id
@@ -13,7 +13,7 @@ class Item
   end
 
   private
-  
+
   def can_be_archived?
     current_date = Date.today
     calculated_date = current_date.year - @publish_date.year
