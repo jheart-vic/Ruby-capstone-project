@@ -12,6 +12,8 @@ class Item
     @archived = true if can_be_archived?
   end
 
+  private
+  
   def can_be_archived?
     current_date = Date.today
     calculated_date = current_date.year - @publish_date.year
