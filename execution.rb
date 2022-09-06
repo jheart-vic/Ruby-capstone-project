@@ -28,7 +28,7 @@ class Execution
   def create_book
     AddBook.new(@books).add_book
   end
-  
+
   def list_all_books
     ListBook.new(@books).list_all_books
   end

@@ -15,8 +15,7 @@ module Options
         7 - List all sources
         8 - Add a book
         9 - Add a music album
-        10 - Add a movie
-        11 - Add a game.
+        10 - Add a game.
         0 - quit!'
 
       option = gets.chomp
@@ -52,14 +51,10 @@ module Options
     when 7
       puts "OPtion 7 has been selected\n"
     when 8
-      puts "OPtion 8 has been selected\n"
-    when 9
       execution.create_book
-    when 10
+    when 9
       puts "OPtion 10 has been selected\n"
-    when 11
-      puts "OPtion 11 has been selected\n"
-    when 12
+    when 10
       execution.add_game
     when 0
       quit
