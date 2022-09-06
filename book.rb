@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# the book class
 require './item'
 
 # the book class

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# the Label class
 require './item'
 
 # the Label class
