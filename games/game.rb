@@ -1,9 +1,44 @@
 require './item'
+require './genre'
+require './label'
+require './author/author'
+
 class Game < Item
   def initialize(publish_date, multiplayer, last_played_at, id = Random.rand(1..1000), archived: false)
     super(publish_date, id, archived: archived)
     @multiplayer = multiplayer
     @last_played_at = last_played_at # #date object: date_format: YYYY-mm-dd
+  end
+
+  def get_genre
+    puts "what's the genre of the game?"
+    answer = gets.chomp
+    return Genre.new(answer)
+  end
+
+  def get_label
+    puts 'what is the title of the game?'
+    title = gets.chomp
+
+    puts 'what is the color of the game'
+    color = gets.chomp
+
+    return Label.new(nil, title, color)
+  end
+
+  def get_author(ctx)
+
+    if @ctx.author_list.empty?
+        puts 'There are no authors to select from'
+    else
+        puts 'Select an author choosing the number:'
+        @ctx.author_list.each_with_index do |author, index|
+            puts "#{index + 1}. #{author.first_name} #{author.last_name}"
+        end
+        return @ctx.author_list[gets.chomp.to_i - 1]
+    end
+
+    return CreateAuthor.new.return_author
   end
 
   private

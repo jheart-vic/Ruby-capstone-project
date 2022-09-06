@@ -1,33 +1,81 @@
 require 'date'
 require './games/game'
 class AddGame
-  def initialize(game_list)
-    @game_list = game_list
+    attr_reader :context
+  def initialize(ctx)
+    @context = ctx
   end
 
   def add_game
-    puts 'What is the name of the game?'
-    name = gets.chomp
-    puts 'Is it multiplayer? (y/n)'
-    response = gets.chomp
-    if response == 'y'
-        multiplayer = true
-    else
-        multiplayer = false
-    end
+    multiplayer = get_is_multiplayer
+    last_played_at = get_last_played_at
+    publish_date = get_publish_date 
+    
+    game_instance = Game.new(multiplayer, last_played_at, publish_date)
 
-    check_date = lambda do
+    game_instance.genre = game_instance.get_genre(@context)
+    game_instance.label = game_instance.get_label(@context)
+    game_instance.author = game_instance.get_author(@context)
+
+    return game_instance
+  end
+
+  def get_is_multiplayer
+    loop do
+        puts "Is this game a multiplayer game? [y / n]"
+        answer = gets.chomp
+        
+        case answer
+        when 'y'
+            return true
+        when 'n'
+            return false
+        else
+            puts 'Invalid input: type [y / n]'
+        end
+    end
+  end
+
+  def get_last_played_at
+    loop do
         puts 'When was it last played? (yyyy-mm-dd)'
-        if last_played_at = validate_date(gets.chomp.to_s)
-            game = Game.new(name, multiplayer, last_played_at)
-            @game_list << game
+        last_played_at = validate_date(gets.chomp.to_s)
+        if last_played_at
+            return last_played_at
         else
           puts 'Invalid Date or format: please enter correct date'
           puts "\n"
           check_date.call
         end
-      end
-    check_date.call
+    end
+  end
+
+  def get_publish_date
+    loop do
+        puts 'What is the publish date of this game [yyyy-mm-dd]'
+        publish_date = validate_date(gets.chomp.to_s)
+        if publish_date
+            return publish_date
+        else
+          puts 'Invalid Date or format: please enter correct date'
+          puts "\n"
+        end
+    end
+  end 
+
+  def setAuthor(game)
+    #list existing authors ...
+    puts 'Which author is this game for?'
+    list_authors.list_authors
+    choice = gets.chomp.to_i
+    if choice > 0 && choice <= @author_list.length
+        author = @author_list[choice - 1]
+        author.add_item(game)
+    else
+        puts 'The Author does not existing. Creating a new one for you...'
+        author = CreateAuthor.new.return_author
+        author.add_item(game)
+    end
   end
 
   def validate_date(date)

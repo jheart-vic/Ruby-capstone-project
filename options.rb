@@ -47,13 +47,13 @@ module Options
     when 3
       puts "OPtion 3 has been selected\n"
     when 4
-      puts "OPtion 4 has been selected\n"
+      execution.list_games
     when 5
       puts "OPtion 5 as been selected\n"
     when 6
       puts "OPtion 6 has been selected\n"
     when 7
-      puts "OPtion 7 has been selected\n"
+      execution.list_authors
     when 8
       puts "OPtion 8 has been selected\n"
     when 9

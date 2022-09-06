@@ -1,5 +1,5 @@
 class Genre
-  def initialize(id = rand(1..1000), name = 'unknown')
+  def initialize(name = 'unknown', id = rand(1..1000))
     @id = id
     @name = name
     @items = []
