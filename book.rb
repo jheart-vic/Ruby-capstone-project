@@ -9,7 +9,6 @@ class Book < Item
     @id = id
     @publisher = publisher
     @cover_state = cover_state
-    @cover_state = cover_state
   end
 
   private
