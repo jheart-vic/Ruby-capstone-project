@@ -1,7 +1,5 @@
-require './item'
-
 # the Label class
-class Label < Item
+class Label
   # the Label class
   attr_accessor :title, :color
   attr_reader :item
@@ -15,7 +13,7 @@ class Label < Item
   end
 
   def add_item(item)
+    item.label = self
     @items << item
-    Item.label = self
   end
 end
