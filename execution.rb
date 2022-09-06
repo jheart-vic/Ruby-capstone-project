@@ -11,26 +11,26 @@ class Execution
 
   attr_accessor :game_list
 
-    def initialize
-        @game_list = []
-        @author_list = []
-        @books = load_books
-        @labels = []
-        @genres = []
-        @music_album = []
-    end
+  def initialize
+    @game_list = []
+    @author_list = []
+    @books = load_books
+    @labels = []
+    @genres = []
+    @music_album = []
+  end
 
-    def add_game
-        AddGame.new(@game_list).add_game
-    end
+  def add_game
+    AddGame.new(@game_list).add_game
+  end
 
-    def create_book
-        AddBook.new(@books).add_book
-    end
+  def create_book
+    AddBook.new(@books).add_book
+  end
 
-    def validate_date(date)
+  def validate_date(date)
     Date.parse(date)
-    rescue StandardError
-        false
-    end
+  rescue StandardError
+    false
+  end
 end

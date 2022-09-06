@@ -1,7 +1,6 @@
 # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
 require './execution'
 module Options
-  
   def display_options
     execution = Execution.new
     loop do
@@ -37,7 +36,6 @@ module Options
   end
 
   def process_input(option, execution)
-    
     case option
 
     when 1

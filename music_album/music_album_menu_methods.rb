@@ -1,15 +1,14 @@
 require 'date'
 require_relative 'music_album'
 
-module MusicAlbumMenuMethods  
-
+module MusicAlbumMenuMethods
   def add_music_album
-    title = get_user_input "Album title: "
+    title = get_user_input 'Album title: '
     publish_date = check_date_format
     on_spotify = is_on_spotify?
 
     album = MusicAlbum.new(publish_date, title, on_spotify: on_spotify)
-    puts_message "Music album created successfully"
+    puts_message 'Music album created successfully'
     @music_album << album
   end
 
@@ -19,8 +18,9 @@ module MusicAlbumMenuMethods
       return
     end
     @music_album.each do |album|
-      on_spotify = album.on_spotify ? "Yes" : "No" 
-      puts_message "ID:#{album.id} | Album title: #{album.title} | Release date:#{album.publish_date} | on spotify:#{on_spotify}"
+      on_spotify = album.on_spotify ? 'Yes' : 'No'
+      puts_message "ID:#{album.id} | Album title: #{album.title} |
+        Release date:#{album.publish_date} | on spotify:#{on_spotify}"
     end
   end
 
@@ -28,23 +28,21 @@ module MusicAlbumMenuMethods
 
   def check_date_format
     check_date = lambda do
-      date = get_user_input "Album publish date(yy/mm/dd): "      
-      if validate_date(date)
-        return Date.parse(date)
-      else
-        puts_message 'Invalid Date or format: please enter correct date'        
-        check_date.call
-      end    
+      date = get_user_input 'Album publish date(yy/mm/dd): '
+      return Date.parse(date) if validate_date(date)
+
+      puts_message 'Invalid Date or format: please enter correct date'
+      check_date.call
     end
     check_date.call
   end
 
-  def is_on_spotify?
+  def on_spotify?
     spotify = lambda do
-      on_spotify = get_user_input("Is this album, on spotify? y or n: ").downcase
-      case on_spotify
+      spotify = get_user_input('Is this album, on spotify? y or n: ').downcase
+      case spotify
       when 'n'
-        return false        
+        return false
       when 'y'
         return true
       else
@@ -53,7 +51,7 @@ module MusicAlbumMenuMethods
       end
     end
     spotify.call
-  end 
+  end
 
   def get_user_input(key = '')
     puts "\n"
