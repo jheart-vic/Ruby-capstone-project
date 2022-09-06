@@ -12,7 +12,9 @@ class AddBook
     publisher = gets.chomp.strip.capitalize
     print 'cover_state:  '
     cover_state = gets.chomp.strip.capitalize
-    @books << Book.new(nil, publisher, cover_state)
+    print 'publish_date:  '
+    publish_date = gets.chomp
+    @books << Book.new(publisher, cover_state, publish_date)
     print('Book created successfully', 'Happy learning')
   end
 end

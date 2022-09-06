@@ -9,7 +9,7 @@ module BookStore
     if File.exist?(book_file) && File.read(book_file) != ''
       data = book_file.read
       JSON.parse(data).each do |book|
-        book_store << Book.new(book['id'], book['publisher'], book['cover_state'])
+        book_store << Book.new(book['publisher'], book['cover_state'], book['publish_date'])
       end
     else
       File.write(book_file, '[]')
@@ -20,7 +20,7 @@ module BookStore
   def save_books_to_file
     book_store = []
     @books.each do |book|
-      book_store << { id: book.id, publisher: book.publisher, cover_state: book.cover_state }
+      book_store << { publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date }
     end
     File.write('./books.json', book_store.to_json)
   end
