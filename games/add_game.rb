@@ -14,7 +14,8 @@ class AddGame
 
     check_date = lambda do
       puts 'When was it last played? (yyyy-mm-dd)'
-      if last_played_at == validate_date(gets.chomp.to_s)
+      last_played_at = validate_date(gets.chomp.to_s)
+      if last_played_at
         game = Game.new(name, multiplayer, last_played_at)
         @game_list << game
       else
