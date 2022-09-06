@@ -1,13 +1,17 @@
 require 'date'
 require_relative 'music_album'
+require_relative '../genre/genre'
 
 module MusicAlbumMenuMethods
   def add_music_album
     title = get_user_input 'Album title: '
     publish_date = check_date_format
-    on_spotify = is_on_spotify?
+    spotify = on_spotify?
+    genre = create_genre
 
-    album = MusicAlbum.new(publish_date, title, on_spotify: on_spotify)
+    album = MusicAlbum.new(publish_date, title, on_spotify: spotify)
+    genre.add_item(album)
+    @genres << genre unless [*@genres].include?(genre)
     puts_message 'Music album created successfully'
     @music_album << album
   end
@@ -19,10 +23,10 @@ module MusicAlbumMenuMethods
     end
     @music_album.each do |album|
       on_spotify = album.on_spotify ? 'Yes' : 'No'
-      puts_message "ID:#{album.id} | Album title: #{album.title} |
-        Release date:#{album.publish_date} | on spotify:#{on_spotify}"
+      puts "ID:#{album.id} | Album title: #{album.title} | Genre: #{album.genre.name} | Release date:#{album.publish_date} | on spotify:#{on_spotify}"
     end
   end
+
 
   private
 
@@ -39,7 +43,7 @@ module MusicAlbumMenuMethods
 
   def on_spotify?
     spotify = lambda do
-      spotify = get_user_input('Is this album, on spotify? y or n: ').downcase
+      spotify = get_user_input('Is it on spotify? y or n: ').downcase
       case spotify
       when 'n'
         return false
