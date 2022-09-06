@@ -1,7 +1,6 @@
 # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
 require './execution'
 module Options
-  
   def display_options
     execution = Execution.new
     loop do
@@ -9,16 +8,15 @@ module Options
 
         1 - List all books.
         2 - List all music albums.
-        3 - List all movies.
-        4 - List of games
-        5 - List all genre
-        6 - List all labels
-        7 - List all authors
-        8 - List all sources
-        9 - Add a book
-        10 - Add a music album
-        11 - Add a movie
-        12 - Add a game.
+        3 - List of games
+        4 - List all genre
+        5 - List all labels
+        6 - List all authors
+        7 - List all sources
+        8 - Add a book
+        9 - Add a music album
+        10 - Add a movie
+        11 - Add a game.
         0 - quit!'
 
       option = gets.chomp
@@ -37,11 +35,10 @@ module Options
   end
 
   def process_input(option, execution)
-    
     case option
 
     when 1
-      puts "OPtion 1 has been selected\n"
+      execution.list_all_books
     when 2
       puts "OPtion 2 has been selected\n"
     when 3
