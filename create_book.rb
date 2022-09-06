@@ -15,6 +15,6 @@ class AddBook
     print 'publish_date:  '
     publish_date = gets.chomp
     @books << Book.new(publisher, cover_state, publish_date)
-    print('Book created successfully', 'Happy learning')
+    print('Book created successfully', 'Happy learning\n')
   end
 end

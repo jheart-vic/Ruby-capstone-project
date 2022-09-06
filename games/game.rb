@@ -1,7 +1,7 @@
-require '../item'
+require './item'
 class Game < Item
-  def initialize(publish_date, multiplayer, last_played_at)
-    super(publish_date)
+  def initialize(publish_date, multiplayer, last_played_at, id = Random.rand(1..1000), archived: false)
+    super(publish_date, id, archived: archived)
     @multiplayer = multiplayer
     @last_played_at = last_played_at # #date object: date_format: YYYY-mm-dd
   end

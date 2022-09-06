@@ -1,7 +1,9 @@
 # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
-
+require './execution'
 module Options
+  
   def display_options
+    execution = Execution.new
     loop do
       puts 'Please choose an option by entering a number:
 
@@ -22,7 +24,7 @@ module Options
       option = gets.chomp
 
       if number?(option)
-        process_input(option.to_i)
+        process_input(option.to_i, execution)
       else
         show_error
       end
@@ -34,7 +36,8 @@ module Options
     /\A[+-]?\d+(\.\d+)?\z/.match(obj)
   end
 
-  def process_input(option)
+  def process_input(option, execution)
+    
     case option
 
     when 1
@@ -54,13 +57,13 @@ module Options
     when 8
       puts "OPtion 8 has been selected\n"
     when 9
-      puts "OPtion 9 has been selected\n"
+      execution.create_book
     when 10
       puts "OPtion 10 has been selected\n"
     when 11
       puts "OPtion 11 has been selected\n"
     when 12
-      puts "OPtion 12 has been selected\n"
+      execution.add_game
     when 0
       quit
     else
