@@ -57,7 +57,7 @@ module Options
     when 10
       execution.add_game
     when 0
-      quit
+      quit(execution)
     else
       show_error
     end
@@ -67,7 +67,8 @@ module Options
     puts 'Error! Please select a valid option.'
   end
 
-  def quit
+  def quit(execution)
+    execution.save_books_to_file
     # save your files to json
     puts 'saving your data ...'
 
