@@ -4,7 +4,7 @@ require './label'
 require './label_store'
 
 # the label class
-class CreateLabel
+class AddLabel
   def initialize(labels)
     @labels = labels
   end

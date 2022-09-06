@@ -4,12 +4,12 @@ require './book'
 require './book_store'
 
 # Add book class
-class CreateBook
+class AddBook
   def initialize(books)
     @books = books
   end
 
-  def create_book
+  def add_book
     print 'Publisher:'
     publisher = gets.chomp.strip.capitalize
     print 'cover_state:  '
