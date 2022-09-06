@@ -17,8 +17,6 @@ class Item
   def can_be_archived?
     current_date = Date.today
     calculated_date = current_date.year - @publish_date.year
-    return true if calculated_date > 10
-
-    false
+    calculated_date > 10
   end
 end
