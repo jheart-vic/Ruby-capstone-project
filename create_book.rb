@@ -1,6 +1,5 @@
 require 'date'
 require './book'
-require './book_store'
 require './create_label'
 # Add book class
 module AddBook
@@ -10,8 +9,7 @@ module AddBook
     print 'Publisher:  '
     publisher = gets.chomp.strip.capitalize
     print 'cover_state:  '
-    cover_state = gets.chomp.strip.capitalize
-    label = create_label
+    cover_state = gets.chomp.strip.capitalize    
     book = ''
     print 'publish_date:  '
     check_date = lambda do
@@ -19,8 +17,7 @@ module AddBook
       publish_date = validate_date(gets.chomp.to_s)
       if publish_date
         book = Book.new(publisher, cover_state, publish_date)
-        @books << book
-        puts("Book created successfully', 'Happy learning\n")
+        @books << book        
       else
         puts 'Invalid Date or format: please enter correct date'
         puts "\n"
@@ -28,8 +25,19 @@ module AddBook
       end
     end
     check_date.call
+
+    label = create_label
+    genre = create_genre
+    author = obtain_author("author")
+   
+    genre.add_item(book) 
+    author.add_item(book)
     label.add_item(book)
-    @labels << label
+
+    @genres << genre unless [*@genres].include?(genre)   
+    @labels << label unless [*@labels].include?(label)
+    @author_list << author unless [*@author_list].include?(author)
+    puts("Book created successfully', 'Happy learning\n")    
   end
 
   def validate_date(date)
