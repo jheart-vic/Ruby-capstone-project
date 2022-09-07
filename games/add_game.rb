@@ -10,7 +10,7 @@ module AddGame
 
     genre = create_genre
     label = create_label
-    author = obtain_author("creator")
+    author = obtain_author('creator')
 
     genre.add_item(game_instance)
     label.add_item(game_instance)

@@ -4,13 +4,14 @@ require './games/list_games'
 require './author/list_authors'
 require './create_book'
 require './create_label'
-require './store'
+require './storage_methods/save_all_data'
+require './storage_methods/load_data'
 require './list_books'
 require './music_album/music_album_menu_methods'
 require './genre/Genre_menu_methods'
 
 class Execution
-  include Store
+  include SaveAllData
   include AddLabel
   include AddBook
   include MusicAlbumMenuMethods
@@ -18,6 +19,7 @@ class Execution
   include AuthorModule
   include AddGame
   include ListBook
+  include LoadData
 
   attr_accessor :game_list
 
