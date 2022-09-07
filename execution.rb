@@ -37,10 +37,6 @@ class Execution
   def list_authors
     ListAuthors.new(@author_list).list_authors
   end
-
-  # def create_book
-  #   AddBook.new(@books).add_book
-  # end
   
   def list_all_books
     ListBook.new(@books).list_all_books
