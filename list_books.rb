@@ -12,7 +12,8 @@ class ListBook
       @books.each_with_index do |book, index|
         puts "#{index + 1}) Publisher: #{book.publisher},
                cover_state: #{book.cover_state},
-               Published_date: #{book.publish_date}"
+               Published_date: #{book.publish_date},
+               Label: #{book.label.title}"
       end
 
     else
