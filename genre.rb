@@ -1,4 +1,5 @@
 class Genre
+  attr_reader :items, :name
   def initialize(name = 'unknown', id = rand(1..1000))
     @id = id
     @name = name
@@ -6,7 +7,6 @@ class Genre
   end
 
   def add_item(item)
-    item.genre = self
     @items << item
   end
 end

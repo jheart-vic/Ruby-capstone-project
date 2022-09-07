@@ -10,11 +10,11 @@ class Item
 
   def author=(author)
     @author = author
+    @author.add_item(self) unless @author.items.include?(self)
   end
 
   def genre=(genre)
     @genre = genre
-    @genre.add_item(self) unless @genre.items.include?(self)
   end
 
   def label=(label)

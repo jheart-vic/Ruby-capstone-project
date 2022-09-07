@@ -11,12 +11,15 @@ class AddGame
     last_played_at = get_last_played_at
     publish_date = get_publish_date 
     
-    game_instance = Game.new(multiplayer, last_played_at, publish_date)
+    game_instance = Game.new(publish_date,multiplayer, last_played_at)
 
-    game_instance.genre = game_instance.get_genre(@context)
-    game_instance.label = game_instance.get_label(@context)
-    game_instance.author = game_instance.get_author(@context)
+    game_instance.genre= game_instance.get_genre(@context)
+    game_instance.label= game_instance.get_label(@context)
+    game_instance.author= game_instance.get_author(@context)
 
+    @context.game_list << game_instance
+    @context.author_list << game_instance.author
+    
     return game_instance
   end
 
@@ -45,7 +48,6 @@ class AddGame
         else
           puts 'Invalid Date or format: please enter correct date'
           puts "\n"
-          check_date.call
         end
     end
   end
@@ -60,21 +62,6 @@ class AddGame
           puts 'Invalid Date or format: please enter correct date'
           puts "\n"
         end
-    end
-  end 
-
-  def setAuthor(game)
-    #list existing authors ...
-    puts 'Which author is this game for?'
-    list_authors.list_authors
-    choice = gets.chomp.to_i
-    if choice > 0 && choice <= @author_list.length
-        author = @author_list[choice - 1]
-        author.add_item(game)
-    else
-        puts 'The Author does not existing. Creating a new one for you...'
-        author = CreateAuthor.new.return_author
-        author.add_item(game)
     end
   end
 

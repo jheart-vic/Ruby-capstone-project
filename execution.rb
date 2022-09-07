@@ -1,8 +1,12 @@
 require './games/add_game'
 require './games/list_games'
+require './author/list_authors'
 require './create_book'
 require './book_store'
+
 class Execution
+    attr_accessor :game_list
+    attr_reader :author_list
     include BookStore
     
     def initialize

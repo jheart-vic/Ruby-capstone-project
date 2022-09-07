@@ -6,7 +6,7 @@ class CreateAuthor
         
         puts "What is the last name of the Author?"
         last_name = gets.chomp
-        @author = Author.new(@first_name, @last_name)
+        @author = Author.new(first_name, last_name)
     end
 
     def return_author
