@@ -3,6 +3,7 @@ require './execution'
 module Options
   def display_options
     execution = Execution.new
+    execution.load_all_data
     loop do
       puts 'Please choose an option by entering a number:
 
@@ -65,8 +66,8 @@ module Options
   end
 
   def quit(execution)
-    execution.save_books_to_file
     # save your files to json
+    execution.save_data
     puts 'saving your data ...'
 
     puts "Thanks for using Using The catalog of things\n"
