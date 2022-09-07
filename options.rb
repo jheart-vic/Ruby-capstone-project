@@ -12,10 +12,9 @@ module Options
         4 - List all genre
         5 - List all labels
         6 - List all authors
-        7 - List all sources
-        8 - Add a book
-        9 - Add a music album
-        10 - Add a game.
+        7 - Add a book
+        8 - Add a music album
+        9 - Add a game.
         0 - quit!'
 
       option = gets.chomp
@@ -49,12 +48,10 @@ module Options
     when 6
       execution.list_authors
     when 7
-      puts "OPtion 7 has been selected\n"
-    when 8
       execution.add_book
-    when 9
+    when 8
       execution.add_music_album
-    when 10
+    when 9
       execution.add_game
     when 0
       quit(execution)

@@ -1,4 +1,5 @@
 require 'date'
+
 class Item
   attr_reader :author, :source, :genre, :label, :id, :publish_date, :archived
 
@@ -10,17 +11,14 @@ class Item
 
   def author=(author)
     @author = author
-    @author.add_item(self) unless @author.items.include?(self)
   end
 
   def genre=(genre)
     @genre = genre
-    @genre.add_item(self) unless @genre.items.include?(self)
   end
 
   def label=(label)
     @label = label
-    @label.add_item(self) unless @label.items.include?(self)
   end
 
   def move_to_archive

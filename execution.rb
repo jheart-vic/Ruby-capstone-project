@@ -1,4 +1,5 @@
 require './games/add_game'
+require './author/author_methods'
 require './games/list_games'
 require './author/list_authors'
 require './create_book'
@@ -14,6 +15,7 @@ class Execution
   include AddBook
   include MusicAlbumMenuMethods
   include GenreMenuMethods
+  include AuthorModule
   include AddGame
 
   attr_accessor :game_list
@@ -27,16 +29,8 @@ class Execution
     @music_album = []
   end
 
-  # def add_game
-  #   AddGame.new(@game_list).add_game
-  # end
-
   def list_games
     ListGames.new(@game_list).list_games
-  end
-
-  def list_authors
-    ListAuthors.new(@author_list).list_authors
   end
 
   def list_all_books

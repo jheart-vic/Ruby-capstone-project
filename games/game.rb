@@ -13,13 +13,13 @@ class Game < Item
     @last_played_at = last_played_at # #date object: date_format: YYYY-mm-dd
   end
 
-  def get_genre(_ctx)
+  def get_genre(genres)
     puts "what's the genre of the game?"
     answer = gets.chomp
     Genre.new(answer)
   end
 
-  def get_label(_ctx)
+  def get_label()
     puts 'what is the title of the game?'
     title = gets.chomp
 
@@ -30,7 +30,7 @@ class Game < Item
   end
 
   # rubocop:disable Metrics/MethodLength
-  def get_author(ctx)
+  def get_author()
     puts 'Which author is this game for?'
 
     if ctx.author_list.empty?
