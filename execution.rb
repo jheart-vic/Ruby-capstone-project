@@ -2,17 +2,19 @@ require './games/add_game'
 require './games/list_games'
 require './author/list_authors'
 require './create_book'
+require './create_label'
 require './book_store'
-
 require './list_books'
 require './music_album/music_album_menu_methods'
 require './genre/Genre_menu_methods'
 
 class Execution
   include BookStore
+  include AddLabel
+  include AddBook
   include MusicAlbumMenuMethods
   include GenreMenuMethods
-  attr_reader :author_list
+
   attr_accessor :game_list
 
   def initialize
@@ -25,21 +27,21 @@ class Execution
   end
 
   def add_game
-    AddGame.new(self).add_game
+    AddGame.new(@game_list).add_game
   end
-
+  
   def list_games
     ListGames.new(@game_list).list_games
   end
-
-  def create_book
-    AddBook.new(@books).add_book
-  end
-
+  
   def list_authors
     ListAuthors.new(@author_list).list_authors
   end
 
+  # def create_book
+  #   AddBook.new(@books).add_book
+  # end
+  
   def list_all_books
     ListBook.new(@books).list_all_books
   end

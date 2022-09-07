@@ -23,7 +23,7 @@ module BookStore
     book_store = []
     @books.each do |book|
       book_store << { publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date,
-                      id: book.id, archived: book.archived }
+                      id: book.id, archived: book.archived, label: book.label.title }
     end
     File.write('./books.json', book_store.to_json)
   end
