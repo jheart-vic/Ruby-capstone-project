@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require './games/add_game'
 require './games/list_games'
 require './author/list_authors'

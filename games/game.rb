@@ -1,5 +1,5 @@
 require './item'
-require './genre'
+require './genre/genre'
 require './label'
 require './author/author'
 require './author/create_author'
