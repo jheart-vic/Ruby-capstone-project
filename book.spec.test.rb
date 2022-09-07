@@ -16,6 +16,10 @@ describe Book do
       book2 = Book.new('Victor', 'Bad', '2002/10/10')
       expect(book2.send(:can_be_archived?)).to be true
     end
+    it 'Book can_be_archived should return false' do
+      book2 = Book.new('Victor', 'Good', '2015/10/10')
+      expect(book2.send(:can_be_archived?)).to be false
+    end
     it 'Book can_be_archived should return true' do
       book2 = Book.new('Victor', 'Bad', '2002/10/10')
       expect(book2.move_to_archive).to be true
