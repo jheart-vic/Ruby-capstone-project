@@ -1,11 +1,7 @@
 require './book'
-require './book_store'
+# require './store'
 
-class ListBook
-  def initialize(books)
-    @books = books
-  end
-
+module ListBook
   def list_all_books
     puts 'Books'.upcase
     if @books.length.positive?
