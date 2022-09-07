@@ -18,7 +18,8 @@ class Item
 
   def can_be_archived?
     current_date = Date.today
-    calculated_date = current_date.year - @publish_date.year
-    calculated_date > 10
+    inputed_date = Date.parse(@publish_date)
+    calculated_date = current_date - inputed_date
+    calculated_date > 3650
   end
 end
