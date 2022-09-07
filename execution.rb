@@ -4,26 +4,27 @@ require './games/list_games'
 require './author/list_authors'
 require './create_book'
 require './create_label'
-require './book_store'
+require './store'
 require './list_books'
 require './music_album/music_album_menu_methods'
 require './genre/Genre_menu_methods'
 
 class Execution
-  include BookStore
+  include Store
   include AddLabel
   include AddBook
   include MusicAlbumMenuMethods
   include GenreMenuMethods
   include AuthorModule
   include AddGame
+  include ListBook
 
   attr_accessor :game_list
 
   def initialize
     @game_list = []
     @author_list = []
-    @books = load_books
+    @books = []
     @labels = []
     @genres = []
     @music_album = []
@@ -31,10 +32,6 @@ class Execution
 
   def list_games
     ListGames.new(@game_list).list_games
-  end
-
-  def list_all_books
-    ListBook.new(@books).list_all_books
   end
 
   def validate_date(date)
