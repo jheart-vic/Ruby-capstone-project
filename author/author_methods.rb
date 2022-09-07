@@ -1,12 +1,12 @@
 require './author/author'
 module AuthorModule
-  def obtain_author()
-    puts 'Which author is this game for?'
+  def obtain_author(custom_name)
+    puts "Enter name of #{custom_name}"
 
     if @author_list.empty?
-      puts 'There are no authors to select from'
+      puts "There are no #{custom_name} to select from"
     else
-      puts 'Select an author choosing the number:'
+      puts "Select #{custom_name} by choosing the number:"
       loop do
         list_authors
 
@@ -14,7 +14,7 @@ module AuthorModule
         return @author_list[choice - 1] if choice.positive? && choice <= @author_list.length
 
         puts 'Invalid input: please enter a number from the list.'
-        puts 'Do you want to create a new author? [y/n]'
+        puts "Do you want to create a new #{custom_name}? [y/n]"
         case gets.chomp.downcase
         when 'y'
           break
