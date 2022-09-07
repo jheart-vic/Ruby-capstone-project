@@ -14,6 +14,7 @@ class Execution
   include AddBook
   include MusicAlbumMenuMethods
   include GenreMenuMethods
+  include AddGame
 
   attr_accessor :game_list
 
@@ -26,9 +27,9 @@ class Execution
     @music_album = []
   end
 
-  def add_game
-    AddGame.new(@game_list).add_game
-  end
+  # def add_game
+  #   AddGame.new(@game_list).add_game
+  # end
 
   def list_games
     ListGames.new(@game_list).list_games

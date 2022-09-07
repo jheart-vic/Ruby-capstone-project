@@ -1,11 +1,11 @@
 require 'date'
 require './games/game'
-class AddGame
+module AddGame
   attr_reader :context
 
-  def initialize(ctx)
-    @context = ctx
-  end
+  # def initialize(ctx)
+  #   @context = ctx
+  # end
 
   def add_game
     multiplayer = multiplayer?
@@ -18,8 +18,8 @@ class AddGame
     game_instance.label = game_instance.get_label(@context)
     game_instance.author = game_instance.get_author(@context)
 
-    @context.game_list << game_instance
-    @context.author_list << game_instance.author
+    @game_list << game_instance
+    @author_list << game_instance.author
 
     game_instance
   end
