@@ -1,6 +1,6 @@
 require './author/author'
 module AuthorModule
-  def get_author()
+  def obtain_author()
     puts 'Which author is this game for?'
 
     if @author_list.empty?

@@ -1,7 +1,6 @@
 require 'date'
 require './games/game'
 module AddGame
-
   def add_game
     multiplayer = multiplayer?
     last_played_at = obtain_last_played_at
@@ -11,7 +10,7 @@ module AddGame
 
     genre = create_genre
     label = create_label
-    author = get_author
+    author = obtain_author
 
     genre.add_item(game_instance)
     label.add_item(game_instance)
