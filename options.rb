@@ -4,7 +4,7 @@ module Options
   def display_options
     execution = Execution.new
     loop do
-      puts '\nPlease choose an option by entering a number:
+      puts 'Please choose an option by entering a number:
 
         1 - List all books.
         2 - List all music albums.
@@ -39,11 +39,11 @@ module Options
     when 1
       execution.list_all_books
     when 2
-      puts "OPtion 2 has been selected\n"
+      execution.list_all_music_album
     when 3
       puts "OPtion 3 has been selected\n"
     when 4
-      puts "OPtion 4 has been selected\n"
+      execution.list_all_genre
     when 5
       puts "OPtion 5 as been selected\n"
     when 6
@@ -53,7 +53,7 @@ module Options
     when 8
       execution.create_book
     when 9
-      puts "OPtion 10 has been selected\n"
+      execution.add_music_album
     when 10
       execution.add_game
     when 0
