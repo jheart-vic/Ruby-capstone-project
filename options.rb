@@ -45,13 +45,13 @@ module Options
     when 4
       execution.list_all_genre
     when 5
-      puts "OPtion 5 as been selected\n"
+      execution.list_all_label
     when 6
       puts "OPtion 6 has been selected\n"
     when 7
       puts "OPtion 7 has been selected\n"
     when 8
-      execution.create_book
+      execution.add_book
     when 9
       execution.add_music_album
     when 10
