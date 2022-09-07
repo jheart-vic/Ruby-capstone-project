@@ -1,7 +1,7 @@
 require 'date'
 require_relative 'music_album'
 require_relative '../genre/genre'
-
+# rubocop:disable Layout/LineLength
 module MusicAlbumMenuMethods
   def add_music_album
     title = get_user_input 'Album title: '
@@ -26,7 +26,6 @@ module MusicAlbumMenuMethods
       puts "ID:#{album.id} | Album title: #{album.title} | Genre: #{album.genre.name} | Release date:#{album.publish_date} | on spotify:#{on_spotify}"
     end
   end
-
 
   private
 
@@ -69,3 +68,4 @@ module MusicAlbumMenuMethods
     puts "\n"
   end
 end
+# rubocop:enable Layout/LineLength
