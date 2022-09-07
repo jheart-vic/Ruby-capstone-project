@@ -1,4 +1,6 @@
 require './games/add_game'
+require './games/list_games'
+require './author/list_authors'
 require './create_book'
 require './create_label'
 require './book_store'
@@ -28,9 +30,13 @@ class Execution
     AddGame.new(@game_list).add_game
   end
 
-  # def create_book
-  #   AddBook.new(@books).add_book
-  # end
+  def list_games
+    ListGames.new(@game_list).list_games
+  end
+
+  def list_authors
+    ListAuthors.new(@author_list).list_authors
+  end
 
   def list_all_books
     ListBook.new(@books).list_all_books

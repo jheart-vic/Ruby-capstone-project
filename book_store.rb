@@ -10,7 +10,8 @@ module BookStore
     if File.exist?(book_file) && File.read(book_file) != ''
       data = book_file.read
       JSON.parse(data).each do |book|
-        book_store << Book.new(book['publisher'], book['cover_state'], book['publish_date'], book['id'])
+        book_store << Book.new(book['publisher'], book['cover_state'], book['publish_date'], book['id'],
+                               archived: book['archived'])
       end
     else
       File.write(book_file, '[]')

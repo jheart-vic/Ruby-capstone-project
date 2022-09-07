@@ -41,13 +41,13 @@ module Options
     when 2
       execution.list_all_music_album
     when 3
-      puts "OPtion 3 has been selected\n"
+      execution.list_games
     when 4
       execution.list_all_genre
     when 5
       execution.list_all_label
     when 6
-      puts "OPtion 6 has been selected\n"
+      execution.list_authors
     when 7
       puts "OPtion 7 has been selected\n"
     when 8
