@@ -1,5 +1,6 @@
 require 'json'
 require './book'
+require './list_books'
 
 # the book module
 module BookStore
