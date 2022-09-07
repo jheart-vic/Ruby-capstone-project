@@ -29,15 +29,15 @@ class Execution
   def add_game
     AddGame.new(@game_list).add_game
   end
-  
+
   def list_games
     ListGames.new(@game_list).list_games
   end
-  
+
   def list_authors
     ListAuthors.new(@author_list).list_authors
   end
-  
+
   def list_all_books
     ListBook.new(@books).list_all_books
   end
