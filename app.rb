@@ -1,6 +1,5 @@
 require './options'
 
-
 class App
   include Options
   def run

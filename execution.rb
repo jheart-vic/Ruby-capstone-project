@@ -24,13 +24,13 @@ class Execution
     @music_album = []
   end
 
-    def add_game
-        AddGame.new(self).add_game
-    end
+  def add_game
+    AddGame.new(self).add_game
+  end
 
-    def list_games
-        ListGames.new(@game_list).list_games
-    end
+  def list_games
+    ListGames.new(@game_list).list_games
+  end
 
   def create_book
     AddBook.new(@books).add_book

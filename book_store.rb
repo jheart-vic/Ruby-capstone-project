@@ -11,7 +11,7 @@ module BookStore
       data = book_file.read
       JSON.parse(data).each do |book|
         book_store << Book.new(book['publisher'], book['cover_state'], book['publish_date'], book['id'],
-          archived: book['archived'])
+                               archived: book['archived'])
       end
     else
       File.write(book_file, '[]')
