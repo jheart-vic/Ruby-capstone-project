@@ -1,4 +1,4 @@
-require_relative '../author/author'
+require './author/author'
 require './games/game'
 
 describe Author do
