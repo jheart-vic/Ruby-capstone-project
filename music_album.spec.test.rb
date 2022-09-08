@@ -1,5 +1,6 @@
 require './music_album/music_album'
 
+# rubocop:disable  Metrics/BlockLength:
 describe MusicAlbum do
   context 'test musicalbum class' do
     date = Date.parse('2000/01/01')
@@ -29,3 +30,4 @@ describe MusicAlbum do
     end
   end
 end
+# rubocop:enable  Metrics/BlockLength:

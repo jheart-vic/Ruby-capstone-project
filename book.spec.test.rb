@@ -1,5 +1,7 @@
 require './book'
 require 'date'
+
+# rubocop:disable  Metrics/BlockLength:
 describe Book do
   context 'test book class' do
     date = Date.parse('2000/01/01')
@@ -30,3 +32,4 @@ describe Book do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength::
