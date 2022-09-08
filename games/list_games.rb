@@ -1,4 +1,3 @@
-# rubocop:disable Layout/LineLength
 class ListGames
   def initialize(game_list)
     @game_list = game_list
@@ -17,4 +16,3 @@ class ListGames
     puts "\n"
   end
 end
-# rubocop:enable Layout/LineLength

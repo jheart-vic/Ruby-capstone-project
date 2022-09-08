@@ -30,7 +30,7 @@ module GenreMenuMethods
               recollect.call
             end
             puts "Genre: #{genre.name} selected!\n"
-          end          
+          end
           recollect.call
         when 2
           genre_name = get_user_input 'Enter new genre: '

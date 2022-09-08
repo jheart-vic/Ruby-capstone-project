@@ -6,19 +6,19 @@ module AuthorModule
     else
       # puts "Select #{custom_name} by choosing the number: "
       loop do
-        puts "Do you want to create a new #{custom_name}? [y/n]"        
+        puts "Do you want to create a new #{custom_name}? [y/n]"
         case gets.chomp.downcase
         when 'y'
           break
-        when 'n'    
+        when 'n'
           list_authors
           choice = gets.chomp.to_i
           author = @author_list[choice - 1] if choice.positive? && choice <= @author_list.length
           puts "Author: #{author.first_name} #{author.last_name} selected!\n"
           return author
         else
-          puts 'Invalid input: please enter a number from the list.'        
-        end        
+          puts 'Invalid input: please enter a number from the list.'
+        end
       end
     end
     CreateAuthor.new.return_author

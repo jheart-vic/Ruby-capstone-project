@@ -1,5 +1,5 @@
-require './label'
-require './book'
+require './label/label'
+require './book/book'
 describe Label do
   context 'test label class' do
     book = Book.new('Macmilan', 'bad', '2000-01-02')
@@ -15,6 +15,9 @@ describe Label do
       label.add_item(book)
       expect(book.label.title).to eq 'Sew'
       expect(book.label.color).to eq 'Blue'
+    end
+    it 'should return the date' do
+      expect(label).to be_an_instance_of Label # the new way
     end
   end
 end

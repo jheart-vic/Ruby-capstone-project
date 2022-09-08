@@ -1,7 +1,6 @@
-require './book'
+require './book/book'
 require 'date'
 
-# rubocop:disable  Metrics/BlockLength:
 describe Book do
   context 'test book class' do
     date = Date.parse('2000/01/01')
@@ -30,6 +29,8 @@ describe Book do
       book2 = Book.new('Victor', 'Bad', date)
       expect(book2.move_to_archive).to be true
     end
+    it 'should return the date' do
+      expect(book).to be_a Book # the new way
+    end
   end
 end
-# rubocop:enable Metrics/BlockLength::

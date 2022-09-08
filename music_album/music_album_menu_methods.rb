@@ -9,7 +9,7 @@ module MusicAlbumMenuMethods
     spotify = on_spotify?
 
     genre = create_genre
-    author = obtain_author('artist')    
+    author = obtain_author('artist')
 
     album = MusicAlbum.new(publish_date, on_spotify: spotify)
     genre.add_item(album)

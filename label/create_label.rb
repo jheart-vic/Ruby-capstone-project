@@ -1,4 +1,4 @@
-# rubocop:disable Layout/LineLength, Metrics/MethodLength
+# rubocop:disable Metrics/MethodLength
 require './label/label'
 # the label class
 module AddLabel
@@ -25,7 +25,7 @@ module AddLabel
         when 1
           recollect = lambda do
             list_all_label
-            label_id = get_user_input 'Choose any title by Id from the list above: '          
+            label_id = get_user_input 'Choose any title by Id from the list above: '
             label = @labels.find { |item| item.id == label_id.to_i }
             if label.nil?
               puts "\nInvalid id, please choose a valid one\n"
@@ -47,4 +47,4 @@ module AddLabel
     label
   end
 end
-# rubocop:enable Layout/LineLength, Metrics/MethodLength
+# rubocop:enable Metrics/MethodLength

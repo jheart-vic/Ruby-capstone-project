@@ -23,7 +23,7 @@ module LoadData
   def read_music_albums
     read_data('./data/music_albums.json').each do |music|
       new_music = MusicAlbum.new(music['publish_date'], on_spotify: music['on_spotify'],
-                                                                        id: music['id'], archived: music['archived'])
+                                                        id: music['id'], archived: music['archived'])
       genre = @genres.find { |item| item.id == music['genre']['id'] }
       label = @labels.find { |item| item.id == music['label']['id'] }
       author = @author_list.find { |item| item.id == music['author']['id'] }

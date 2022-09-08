@@ -5,7 +5,7 @@ describe Genre do
   context ' test genre class' do
     genre = Genre.new('Ayo')
     date = Date.parse('2000/01/01')
-    music = MusicAlbum.new(date, 'Hello', on_spotify: false)
+    music = MusicAlbum.new(date, on_spotify: false)
     it 'Should return Ayo' do
       expect(genre.name).to eq 'Ayo'
     end

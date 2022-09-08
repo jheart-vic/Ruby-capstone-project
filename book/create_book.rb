@@ -28,7 +28,6 @@ module AddBook
     end
     check_date.call
 
-    
     genre = create_genre
     author = obtain_author('author')
 

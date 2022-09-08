@@ -6,7 +6,7 @@ module ListBook
     # puts 'Books'.upcase
     if @books.length.positive?
       @books.each_with_index do |book, index|
-        puts "Book #{index + 1} 
+        puts "Book #{index + 1}
         Title: #{book.label.title}
         Genre: #{book.genre.name}
         Publisher: #{book.publisher}
