@@ -2,6 +2,7 @@ require './book'
 require 'date'
 describe Book do
   context 'test book class' do
+    date = Date.parse('2000/01/01')
     book = Book.new('Victor', 'Good', '2002/10/10')
     it 'Book publisher should return Victor' do
       expect(book.publisher).to eq 'Victor'
@@ -13,15 +14,18 @@ describe Book do
       expect(book.publish_date).to eq '2002/10/10'
     end
     it 'Book can_be_archived should return true' do
-      book2 = Book.new('Victor', 'Bad', '2002/10/10')
-      expect(book2.send(:can_be_archived?)).to be true
+      date = Date.parse('2000/01/01')
+      book = Book.new('Victor', 'bad', date)
+      expect(book.send(:can_be_archived?)).to be true
     end
     it 'Book can_be_archived should return false' do
-      book2 = Book.new('Victor', 'Good', '2015/10/10')
+      date = Date.parse('2015/01/01')
+      book2 = Book.new('Victor', 'Good', date)
       expect(book2.send(:can_be_archived?)).to be false
     end
     it 'Book can_be_archived should return true' do
-      book2 = Book.new('Victor', 'Bad', '2002/10/10')
+      date = Date.parse('2000/01/01')
+      book2 = Book.new('Victor', 'Bad', date)
       expect(book2.move_to_archive).to be true
     end
   end
