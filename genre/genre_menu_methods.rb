@@ -7,25 +7,33 @@ module GenreMenuMethods
       return
     end
     @genres.each_with_index do |genre, index|
-      puts "No.#{index + 1}) Genre_id: #{genre.id} Genre: #{genre.name}"
+      puts "No.#{index + 1}) Id: #{genre.id} | Genre: #{genre.name}"
     end
   end
 
   def create_genre
     genre = ''
     if @genres.empty?
-      genre_name = get_user_input "No exising genre to choose from!\n\nEnter album genre: "
+      genre_name = get_user_input "No exising genre to choose from!\n\nEnter genre: "
       genre = Genre.new(genre_name)
     else
       choose_genre = lambda do
-        option = get_user_input "Please choose one of the options below(1 or 2):\n1. Existing genre\n2. Create new genre:\nAlbum genre: "
+        option = get_user_input "Create Genre\n\nPlease choose one of the options below(1 or 2):\n1. Existing genre\n2. Create new genre:\n"
         case option.to_i
         when 1
-          list_all_genre
-          genre_id = get_user_input 'Choose any genre by Id from the list above: '
-          genre = @genres.find { |item| item.id == genre_id.to_i }
+          recollect = lambda do
+            list_all_genre
+            genre_id = get_user_input 'Choose any genre by Id from the list above: '
+            genre = @genres.find { |item| item.id == genre_id.to_i }
+            if genre.nil?
+              puts "\nInvalid id, please choose a valid one\n\n"
+              recollect.call
+            end
+            puts "Genre: #{genre.name} selected!\n"
+          end
+          recollect.call
         when 2
-          genre_name = get_user_input 'Enter new album genre: '
+          genre_name = get_user_input 'Enter new genre: '
           genre = Genre.new(genre_name)
         else
           choose_genre.call

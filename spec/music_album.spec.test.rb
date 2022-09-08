@@ -1,13 +1,9 @@
 require './music_album/music_album'
 
-# rubocop:disable  Metrics/BlockLength:
 describe MusicAlbum do
   context 'test musicalbum class' do
     date = Date.parse('2000/01/01')
-    music = MusicAlbum.new(date, 'Hello', on_spotify: false)
-    it 'should return Hello' do
-      expect(music.title).to eq 'Hello'
-    end
+    music = MusicAlbum.new(date, on_spotify: false)
     it 'should return the date' do
       expect(music.publish_date).to eq date
     end
@@ -16,12 +12,12 @@ describe MusicAlbum do
     end
     it 'should return true' do
       date = Date.parse('2000/01/01')
-      music1 = MusicAlbum.new(date, 'Hello', on_spotify: true)
+      music1 = MusicAlbum.new(date, on_spotify: true)
       expect(music1.send(:can_be_archived?)).to be true
     end
     it 'should return true' do
       date = Date.parse('2000/01/01')
-      music1 = MusicAlbum.new(date, 'Hello', on_spotify: false)
+      music1 = MusicAlbum.new(date, on_spotify: false)
       expect(music1.send(:can_be_archived?)).to be false
     end
     it 'should return the date' do
@@ -30,4 +26,3 @@ describe MusicAlbum do
     end
   end
 end
-# rubocop:enable  Metrics/BlockLength:

@@ -32,7 +32,7 @@ module SaveAllData
 
   def create_music_object(music_array)
     music_array.map do |music|
-      { id: music.id, publish_date: music.publish_date, title: music.title, on_spotify: music.on_spotify,
+      { id: music.id, publish_date: music.publish_date, on_spotify: music.on_spotify,
         archived: music.archived, label: { id: music.label.id, title: music.label.title, color: music.label.color },
         author: { id: music.author.id, first_name: music.author.first_name, last_name: music.author.last_name },
         genre: { id: music.genre.id, name: music.genre.name } }

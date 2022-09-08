@@ -5,7 +5,7 @@ module Options
     execution = Execution.new
     execution.load_all_data
     loop do
-      puts 'Please choose an option by entering a number:
+      puts "\nPlease choose an option by entering a number:
 
         1 - List all books.
         2 - List all music albums.
@@ -16,7 +16,7 @@ module Options
         7 - Add a book
         8 - Add a music album
         9 - Add a game.
-        0 - quit!'
+        0 - quit!"
 
       option = gets.chomp
 

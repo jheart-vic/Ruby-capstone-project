@@ -3,13 +3,15 @@ require './book/book'
 
 module ListBook
   def list_all_books
-    puts 'Books'.upcase
+    # puts 'Books'.upcase
     if @books.length.positive?
       @books.each_with_index do |book, index|
-        puts "#{index + 1}) Publisher: #{book.publisher},
-               cover_state: #{book.cover_state},
-               Published_date: #{book.publish_date},
-               Label: #{book.label.title}"
+        puts "Book #{index + 1}
+        Title: #{book.label.title}
+        Genre: #{book.genre.name}
+        Publisher: #{book.publisher}
+        Cover State: #{book.cover_state}
+        Published_date: #{book.publish_date}\n"
       end
 
     else
