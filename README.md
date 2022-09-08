@@ -1,56 +1,49 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of Things
 
-> Description the project.
+> This is project that is designed to save our items into a catalog to a disk and load them later. The categories are Games, Music and Books
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Ruby
+- RSpec
+- Rubocop
+- VS Code
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+**To get a local copy up and running follow these simple example steps.**
+- Clone the project unto your local disk with `git clone ...`
+- Run `gem install` to install any dependencies
+- Run `ruby main.rb`
 
 ### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
+- The ruby runtime environment should be installed on the computer you are testing on.
 
 ### Run tests
-
-### Deployment
-
-
+To run tests, Run `rspec spec/name_of_file_under_tests.rb`
 
 ## Authors
 
-👤 **Author1**
+👤 **Albert Mensah-Ansah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@sabetech](https://github.com/sabetech)
+- Twitter: [@twitterhandle](https://twitter.com/al_kfx)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/albert-mensah-ansah)
 
-👤 **Author2**
+👤 **Victor Chiemerie**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/jheart-vic)
+- Twitter: [@twitterhandle](https://twitter.com/Victorjheart)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-chiemerie-302a97230/)
+
+**Robertson Akpah Arthur**
+
+- GitHub: [@githubhandle](https://github.com/ bobb-Rob)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/roberson-authur/)
 
 ## 🤝 Contributing
 
@@ -72,4 +65,3 @@ Give a ⭐️ if you like this project!
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
