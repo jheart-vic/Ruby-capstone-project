@@ -7,11 +7,20 @@ module MusicAlbumMenuMethods
     title = get_user_input 'Album title: '
     publish_date = check_date_format
     spotify = on_spotify?
+
     genre = create_genre
+    author = obtain_author('artist')
+    label = create_label
 
     album = MusicAlbum.new(publish_date, title, on_spotify: spotify)
     genre.add_item(album)
+    author.add_item(album)
+    label.add_item(album)
+
     @genres << genre unless [*@genres].include?(genre)
+    @labels << label unless [*@labels].include?(label)
+    @author_list << author unless [*@author_list].include?(author)
+
     puts_message 'Music album created successfully'
     @music_album << album
   end

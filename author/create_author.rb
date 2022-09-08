@@ -1,10 +1,10 @@
 require './author/Author'
 class CreateAuthor
   def initialize()
-    puts 'What is the first name of the Author?'
+    puts 'Enter first name: '
     first_name = gets.chomp
 
-    puts 'What is the last name of the Author?'
+    puts 'Enter last name: ?'
     last_name = gets.chomp
     @author = Author.new(first_name, last_name)
   end
