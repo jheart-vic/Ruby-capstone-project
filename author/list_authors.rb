@@ -6,9 +6,9 @@ class ListAuthors
   end
 
   def list_authors
-    puts "AUTHOR LISTS:\n"
+    puts "Authors List:\n"
     @author_list.each_with_index do |author, index|
-      puts "#{index + 1}. #{author.first_name} #{author.last_name}\n"
+      puts "#{index + 1}. #{author.first_name.capitalize} #{author.last_name.capitalize}\n"
     end
     puts "\n"
   end

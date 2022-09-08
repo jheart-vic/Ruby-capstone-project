@@ -6,9 +6,11 @@ module AddBook
   include AddLabel
   # rubocop:disable Metrics/MethodLength:
   def add_book
-    print 'Publisher:  '
+    print 'Add a book: '
+    label = create_label
+    print "\nPublisher's Name:  "
     publisher = gets.chomp.strip.capitalize
-    print 'cover_state:  '
+    print 'Enter the state of cover (good or bad):  '
     cover_state = gets.chomp.strip.capitalize
     book = ''
     print 'publish_date:  '
@@ -26,7 +28,7 @@ module AddBook
     end
     check_date.call
 
-    label = create_label
+    
     genre = create_genre
     author = obtain_author('author')
 

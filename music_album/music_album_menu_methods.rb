@@ -4,15 +4,14 @@ require_relative '../genre/genre'
 # rubocop:disable Layout/LineLength
 module MusicAlbumMenuMethods
   def add_music_album
-    title = get_user_input 'Album title: '
+    label = create_label
     publish_date = check_date_format
     spotify = on_spotify?
 
     genre = create_genre
-    author = obtain_author('artist')
-    label = create_label
+    author = obtain_author('artist')    
 
-    album = MusicAlbum.new(publish_date, title, on_spotify: spotify)
+    album = MusicAlbum.new(publish_date, on_spotify: spotify)
     genre.add_item(album)
     author.add_item(album)
     label.add_item(album)
@@ -32,7 +31,7 @@ module MusicAlbumMenuMethods
     end
     @music_album.each do |album|
       on_spotify = album.on_spotify ? 'Yes' : 'No'
-      puts "ID:#{album.id} | Album title: #{album.title} | Genre: #{album.genre.name} | Release date:#{album.publish_date} | on spotify:#{on_spotify}"
+      puts "ID:#{album.id} | Album title: #{album.label.title} | Genre: #{album.genre.name} | Release date:#{album.publish_date} | on spotify:#{on_spotify}"
     end
   end
 
