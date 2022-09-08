@@ -1,5 +1,5 @@
 # rubocop:disable Layout/LineLength, Metrics/MethodLength
-require './label'
+require './label/label'
 # the label class
 module AddLabel
   def list_all_label

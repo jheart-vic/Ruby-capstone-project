@@ -1,6 +1,6 @@
 require './item'
 require './genre/genre'
-require './label'
+require './label/label'
 require './author/author'
 require './author/create_author'
 

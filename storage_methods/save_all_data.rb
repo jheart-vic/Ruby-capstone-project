@@ -1,6 +1,6 @@
 require 'json'
-require_relative '../book'
-require_relative '../list_books'
+require './book/book'
+require './book/list_books'
 
 module SaveAllData
   def save_data
