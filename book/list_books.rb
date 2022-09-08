@@ -1,4 +1,4 @@
-require './book'
+require './book/book'
 # require './store'
 
 module ListBook

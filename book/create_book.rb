@@ -1,6 +1,6 @@
 require 'date'
-require './book'
-require './create_label'
+require './book/book'
+require './label/create_label'
 # Add book class
 module AddBook
   include AddLabel
