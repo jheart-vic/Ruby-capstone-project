@@ -40,10 +40,10 @@ To run tests, Run `rspec spec/name_of_file_under_tests.rb`
 - Twitter: [@twitterhandle](https://twitter.com/Victorjheart)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/victor-chiemerie-302a97230/)
 
-**Robertson Akpah Arthur**
+**Robertson Akpan**
 
-- GitHub: [@githubhandle](https://github.com/ bobb-Rob)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/roberson-authur/)
+- GitHub: [@bobb-rob](https://github.com/bobb-Rob)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/roberson-akpan/)
 
 ## 🤝 Contributing
 
